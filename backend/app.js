@@ -5,9 +5,10 @@ const mongoose = require('mongoose');
 const sauceRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/user');
 const path = require('path');
+require('dotenv').config();
 
 //Connexion to database Mongo DB
-mongoose.connect('mongodb+srv://admin:adminpassword@coursfullstack.qtim6.mongodb.net/coursfullstack?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_DBNAME}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
