@@ -6,6 +6,7 @@ const multer = require('../middleware/multer-config'); //Picture gestion
 
 const saucesCtrl = require('../controllers/sauces');
 
+//Routes
 router.get('/', auth, saucesCtrl.getAllSauces);
 router.post('/', auth, multer, saucesCtrl.createSauce);
 router.get('/:id', auth, saucesCtrl.getOneSauce);
